@@ -1,11 +1,13 @@
 .idea
 
 # Terraform and terragrunt
-*.tfstate/
+*.tfstate*
 *.tfstate.backup
 *.tfplan
-.terragrunt-cache/
+.terragrunt-cache
 .terraform/
+
+terraform.tfvars
 
 test/fixtures/keys/*
 !test/fixtures/keys/.gitkeep
