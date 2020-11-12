@@ -24,6 +24,7 @@ version: 2.1
 workflows:
   default:
     jobs:
-      - test
+      - test:
+          context: ii-ci-1
 
   version: 2
