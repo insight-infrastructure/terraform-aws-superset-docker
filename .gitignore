@@ -9,5 +9,5 @@
 
 terraform.tfvars
 
-test/fixtures/keys/*
-!test/fixtures/keys/.gitkeep
+ansible/roles/superset-*/
+modules
