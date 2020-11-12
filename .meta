@@ -1,0 +1,10 @@
+{
+  "projects": {
+    "modules/superset-docker-compose": "https://github.com/insight-infrastructure/superset-docker-compose",
+    "modules/examples/abhioncbr/docker-superset": "https://github.com/abhioncbr/docker-superset",
+    "modules/examples/amancevice/docker-superset": "https://github.com/amancevice/docker-superset",
+    "modules/apache/incubator-superset": "https://github.com/apache/incubator-superset",
+    "ansible/roles/superset-docker": "https://github.com/insight-infrastructure/ansible-role-superset-docker",
+    "ansible/roles/superset-systemd": "https://github.com/insight-infrastructure/ansible-role-superset"
+  }
+}
