@@ -1,0 +1,12 @@
+---
+- hosts: all
+  pre_tasks:
+    - name: Install cron (Debian).
+      apt: name=cron state=present
+      when: ansible_os_family == 'Debian'
+      
+  roles:
+    - common
+
+    - insight_infra.superset_docker
+#    - superset-docker
