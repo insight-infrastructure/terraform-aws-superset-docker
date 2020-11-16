@@ -65,7 +65,7 @@ No issue is creating limit on this module.
 | private\_port\_cidrs | List of CIDR blocks for private ports | `list(string)` | <pre>[<br>  "172.31.0.0/16"<br>]</pre> | no |
 | private\_ports | List of publicly open ports | `list(number)` | `[]` | no |
 | public\_key\_path | The path to the public ssh key | `string` | n/a | yes |
-| public\_ports | List of publicly open ports | `list(number)` | <pre>[<br>  22,<br>  8088<br>]</pre> | no |
+| public\_ports | List of publicly open ports | `list(number)` | <pre>[<br>  22,<br>  80,<br>  443,<br>  8088<br>]</pre> | no |
 | root\_iops | n/a | `string` | n/a | yes |
 | root\_volume\_size | Root volume size | `number` | `8` | no |
 | root\_volume\_type | n/a | `string` | `"gp2"` | no |

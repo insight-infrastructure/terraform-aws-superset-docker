@@ -15,12 +15,10 @@ variable "public_ports" {
   type        = list(number)
   default = [
     22,
+    80,
+    443,
     8088,
   ]
-}
-
-locals {
-  public_ports = var.domain_name == "" ? [22, 8088] : var.public_ports
 }
 
 variable "private_ports" {
