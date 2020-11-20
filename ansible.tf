@@ -22,7 +22,7 @@ variable "bastion_ip" {
 variable "enable_superset_ssl" {
   description = "Bool to enable SSL"
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "superset_env_file_path" {
@@ -43,11 +43,11 @@ module "ansible" {
 
   playbook_file_path = "${path.module}/ansible/main.yml"
   playbook_vars = merge({
-    cloudwatch_enable   = var.cloudwatch_enable
-    enable_superset_ssl = var.domain_name != "" ? false : var.enable_superset_ssl
-    env_file_path       = var.superset_env_file_path
+    cloudwatch_enable = var.cloudwatch_enable
+    ssl_enable        = var.domain_name != "" ? false : var.enable_superset_ssl
+    env_file_path     = var.superset_env_file_path
+    fqdn              = local.fqdn
   }, var.playbook_vars)
 
   requirements_file_path = "${path.module}/ansible/requirements.yml"
 }
-

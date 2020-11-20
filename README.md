@@ -52,7 +52,7 @@ No issue is creating limit on this module.
 | create\_iam | Bool to create iam role | `bool` | `false` | no |
 | create\_sg | Bool for create security group | `bool` | `true` | no |
 | domain\_name | The domain - example.com. Blank for no ssl / nginx | `string` | `""` | no |
-| enable\_superset\_ssl | Bool to enable SSL | `bool` | `false` | no |
+| enable\_superset\_ssl | Bool to enable SSL | `bool` | `true` | no |
 | hostname | The hostname - ie hostname.example.com - blank for example.com | `string` | `""` | no |
 | instance\_type | Instance type | `string` | `"t3.small"` | no |
 | key\_name | The key pair to import - leave blank to generate new keypair from pub/priv ssh key path | `string` | `""` | no |

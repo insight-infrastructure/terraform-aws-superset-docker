@@ -22,10 +22,14 @@ data "aws_route53_zone" "this" {
   name  = var.domain_name
 }
 
+locals {
+  fqdn = var.hostname == "" ? var.domain_name : "${var.hostname}.${var.domain_name}"
+}
+
 resource "aws_route53_record" "this" {
   count = var.domain_name != "" && var.hostname != "" && var.create_dns ? 1 : 0
 
-  name    = var.hostname == "" ? var.domain_name : "${var.hostname}.${var.domain_name}"
+  name    = local.fqdn
   type    = "A"
   ttl     = "300"
   zone_id = join("", data.aws_route53_zone.this.*.id)
