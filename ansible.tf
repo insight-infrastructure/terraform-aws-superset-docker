@@ -31,6 +31,17 @@ variable "superset_env_file_path" {
   default     = ""
 }
 
+variable "certbot_admin_email" {
+  description = "Email to register SSL cert with"
+  type        = string
+  default     = ""
+}
+
+locals {
+  certbot_admin_email = var.certbot_admin_email == "" ? "admin@${var.domain_name}" : var.certbot_admin_email
+}
+
+
 module "ansible" {
   source           = "github.com/insight-infrastructure/terraform-aws-ansible-playbook.git?ref=v0.14.0"
   create           = var.create
@@ -43,10 +54,11 @@ module "ansible" {
 
   playbook_file_path = "${path.module}/ansible/main.yml"
   playbook_vars = merge({
-    cloudwatch_enable = var.cloudwatch_enable
-    ssl_enable        = var.domain_name != "" ? false : var.enable_superset_ssl
-    env_file_path     = var.superset_env_file_path
-    fqdn              = local.fqdn
+    cloudwatch_enable   = var.cloudwatch_enable
+    ssl_enable          = var.domain_name != "" ? false : var.enable_superset_ssl
+    env_file_path       = var.superset_env_file_path
+    certbot_admin_email = local.certbot_admin_email
+    fqdn                = local.fqdn
   }, var.playbook_vars)
 
   requirements_file_path = "${path.module}/ansible/requirements.yml"

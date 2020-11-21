@@ -46,6 +46,7 @@ No issue is creating limit on this module.
 | ami | AMI to use as base image - blank for ubuntu | `string` | `""` | no |
 | bastion\_ip | Optional IP for bastion - blank for no bastion | `string` | `""` | no |
 | bastion\_user | Optional bastion user - blank for no bastion | `string` | `""` | no |
+| certbot\_admin\_email | Email to register SSL cert with | `string` | `""` | no |
 | cloudwatch\_enable | Enable CW | `bool` | `false` | no |
 | create | Boolean to create resources or not | `bool` | `true` | no |
 | create\_dns | Bool to create ssl cert and nginx proxy | `bool` | `true` | no |
