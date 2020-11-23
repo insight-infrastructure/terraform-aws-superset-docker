@@ -18,3 +18,7 @@ output "key_name" {
 output "fqdn" {
   value = local.fqdn
 }
+
+output "uri" {
+  value = "http://${local.fqdn}"
+}

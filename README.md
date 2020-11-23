@@ -85,6 +85,7 @@ No issue is creating limit on this module.
 | instance\_type | n/a |
 | key\_name | n/a |
 | public\_ip | n/a |
+| uri | n/a |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
