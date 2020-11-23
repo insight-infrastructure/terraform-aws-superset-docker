@@ -41,6 +41,35 @@ locals {
   certbot_admin_email = var.certbot_admin_email == "" ? "admin@${var.domain_name}" : var.certbot_admin_email
 }
 
+variable "superset_username" {
+  description = "The superset username"
+  type        = string
+  default     = "superset"
+}
+
+variable "superset_firstname" {
+  description = "The superset firstname"
+  type        = string
+  default     = "ICON"
+}
+
+variable "superset_lastname" {
+  description = "The superset lastname"
+  type        = string
+  default     = "Todamoon"
+}
+
+variable "superset_email" {
+  description = "The superset email"
+  type        = string
+  default     = "recovery@email.com"
+}
+
+variable "superset_password" {
+  description = "The superset password"
+  type        = string
+  default     = "changemenow"
+}
 
 module "ansible" {
   source           = "github.com/insight-infrastructure/terraform-aws-ansible-playbook.git?ref=v0.14.0"
@@ -54,6 +83,12 @@ module "ansible" {
 
   playbook_file_path = "${path.module}/ansible/main.yml"
   playbook_vars = merge({
+    superset_username  = var.superset_username
+    superset_firstname = var.superset_firstname
+    superset_lastname  = var.superset_lastname
+    superset_email     = var.superset_email
+    superset_password  = var.superset_password
+
     cloudwatch_enable = var.cloudwatch_enable
     //    ssl_enable          = var.domain_name != "" ? false : var.enable_superset_ssl
     ssl_enable          = false # TODO ^^ -

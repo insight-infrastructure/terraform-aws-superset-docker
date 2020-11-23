@@ -72,7 +72,12 @@ No issue is creating limit on this module.
 | root\_volume\_type | n/a | `string` | `"gp2"` | no |
 | subnet\_id | The id of the subnet | `string` | `""` | no |
 | suffix | Suffix to attach to name | `string` | `""` | no |
+| superset\_email | The superset email | `string` | `"recovery@email.com"` | no |
 | superset\_env\_file\_path | Path to .env file for deployment | `string` | `""` | no |
+| superset\_firstname | The superset firstname | `string` | `"ICON"` | no |
+| superset\_lastname | The superset lastname | `string` | `"Todamoon"` | no |
+| superset\_password | The superset password | `string` | `"changemenow"` | no |
+| superset\_username | The superset username | `string` | `"superset"` | no |
 | tags | Map of tags | `map(string)` | `{}` | no |
 | vpc\_id | Custom vpc id - leave blank for deault | `string` | `""` | no |
 
