@@ -54,8 +54,9 @@ module "ansible" {
 
   playbook_file_path = "${path.module}/ansible/main.yml"
   playbook_vars = merge({
-    cloudwatch_enable   = var.cloudwatch_enable
-    ssl_enable          = var.domain_name != "" ? false : var.enable_superset_ssl
+    cloudwatch_enable = var.cloudwatch_enable
+    //    ssl_enable          = var.domain_name != "" ? false : var.enable_superset_ssl
+    ssl_enable          = false # TODO ^^ -
     env_file_path       = var.superset_env_file_path
     certbot_admin_email = local.certbot_admin_email
     fqdn                = local.fqdn
