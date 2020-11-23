@@ -15,3 +15,6 @@ output "key_name" {
   value = var.key_name == "" ? join("", aws_key_pair.this.*.key_name) : var.key_name
 }
 
+output "fqdn" {
+  value = local.fqdn
+}

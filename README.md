@@ -80,6 +80,7 @@ No issue is creating limit on this module.
 
 | Name | Description |
 |------|-------------|
+| fqdn | n/a |
 | instance\_id | n/a |
 | instance\_type | n/a |
 | key\_name | n/a |
