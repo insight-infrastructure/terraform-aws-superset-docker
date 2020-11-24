@@ -71,6 +71,12 @@ variable "superset_password" {
   default     = "changemenow"
 }
 
+variable "superset_database_import_yaml_path" {
+  description = "The path to database import file"
+  type        = string
+  default     = ""
+}
+
 module "ansible" {
   source           = "github.com/insight-infrastructure/terraform-aws-ansible-playbook.git?ref=v0.14.0"
   create           = var.create
@@ -88,6 +94,8 @@ module "ansible" {
     superset_lastname  = var.superset_lastname
     superset_email     = var.superset_email
     superset_password  = var.superset_password
+
+    superset_database_import_yaml_path = var.superset_database_import_yaml_path
 
     cloudwatch_enable = var.cloudwatch_enable
     //    ssl_enable          = var.domain_name != "" ? false : var.enable_superset_ssl

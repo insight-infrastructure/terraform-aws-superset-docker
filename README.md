@@ -72,6 +72,7 @@ No issue is creating limit on this module.
 | root\_volume\_type | n/a | `string` | `"gp2"` | no |
 | subnet\_id | The id of the subnet | `string` | `""` | no |
 | suffix | Suffix to attach to name | `string` | `""` | no |
+| superset\_database\_import\_yaml\_path | The path to database import file | `string` | `""` | no |
 | superset\_email | The superset email | `string` | `"recovery@email.com"` | no |
 | superset\_env\_file\_path | Path to .env file for deployment | `string` | `""` | no |
 | superset\_firstname | The superset firstname | `string` | `"ICON"` | no |
